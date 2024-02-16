@@ -5,14 +5,19 @@ const skills = [
   { skill: "HTML" },
   { skill: "CSS" },
   { skill: "JavaScript" },
-  { skill: "TypeScript" },
-  { skill: "Python" },
+  { skill: "Java" },
   { skill: "React" },
-  { skill: "Next.js" },
-  { skill: "Tailwind CSS" },
+  { skill: "Express" },
+  { skill: "MongoDB" },
+  { skill: "Spring" },
+  { skill: "PostgreSQL" },
+  { skill: "Bootstrap" },
+  { skill: "Docker" },
   { skill: "Git" },
   { skill: "GitHub" },
-  { skill: "Jupyter Notebooks" },
+  { skill: "Junit5" },
+  { skill: "Mockito" },
+  { skill: "Postman" },
 ]
 
 const AboutSection = () => {
@@ -30,34 +35,34 @@ const AboutSection = () => {
               Get to know me!
             </h1>
             <p>
-              Hi, my name is Hosna and I am a{" "}
-              <span className="font-bold">{"highly ambitious"}</span>,
-              <span className="font-bold">{" self-motivated"}</span>, and
-              <span className="font-bold">{" driven"}</span> software engineer
-              based in Los Angeles, CA.
+              Hi, my name is Albert and I am a
+              <b>{" highly ambitious"}</b>,
+              <b>{" self-motivated "}</b> and
+              <b>{" driven "}</b> software engineer
+              living in Vienna, Austria.
             </p>
             <br />
             <p>
-              I graduated from California State University, Northridge in 2019
-              with a BS in Computer Engineering and have been working in the
-              field ever since.
+              I graduated from Codecool in 2023 by
+              finishing the Fullstack-Developer course, and am currently looking for a
+              full-time position to use and further improve my programming skills.
             </p>
             <br />
             <p>
               I have a wide range of hobbies and passions that keep me busy.
-              From reading, playing sports, traveling, to making YouTube videos,
+              Be it reading, playing various games, attending events or just going out with friends,
               I am always seeking new experiences and love to keep myself
               engaged and learning new things.
             </p>
             <br />
             <p>
-              I believe that you should{" "}
+              I believe a person should{" "}
               <span className="font-bold text-teal-500">
                 never stop growing
               </span>{" "}
               and that&#39;s what I strive to do, I have a passion for
               technology and a desire to always push the limits of what is
-              possible. I am excited to see where my career takes me and am
+              possible. I am excited to see where my new career takes me and am
               always open to new opportunities. 🙂
             </p>
           </div>
@@ -78,8 +83,8 @@ const AboutSection = () => {
             <Image
               src="/hero-image.png"
               alt=""
-              width={325}
-              height={325}
+              width={200}
+              height={200}
               className="hidden md:block md:relative md:bottom-4 md:left-32 md:z-0"
             />
           </div>
