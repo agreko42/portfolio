@@ -3,12 +3,13 @@ import "../styles/globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { ThemeProvider } from "next-themes"
+import {useState} from "react";
+import Home from "./page"
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout() {
+
+    let [language, setLanguage] = useState("german");
+
   return (
     <html lang="en">
       {/*
@@ -18,8 +19,11 @@ export default function RootLayout({
       <head />
       <body className="dark:bg-stone-900">
         <ThemeProvider enableSystem={true} attribute="class">
-          <Navbar />
-          {children}
+          <Navbar
+              language={language}
+              setLanguage={setLanguage}
+          />
+          <Home language={language}/>
           <Footer />
         </ThemeProvider>
       </body>

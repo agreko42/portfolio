@@ -3,28 +3,21 @@ import Image from "next/image"
 import Link from "next/link"
 import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
+import Projects from "@/data/Projects";
 
-const projects = [
-  {
-    name: "Foodies",
-    description:
-      "Foodies is a social network site for cooks and culinaric enthusiasts - post recipes, comment on them, and follow others!",
-    image: "/Foodies.png",
-    github: "https://github.com/agreko42/Foodies",
-    link: "http://13.51.176.163:5173/",
-  },
-]
+const ProjectsSection = ( props : any) => {
 
-const ProjectsSection = () => {
+    let text = Projects;
+
   return (
     <section id="projects">
       <h1 className="my-10 text-center font-bold text-4xl">
-        Projects
+          {props.language === "german" ? "Projekte" : "Projects"}
         <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
       </h1>
 
       <div className="flex flex-col space-y-28">
-        {projects.map((project, idx) => {
+        {text.map((project, idx) => {
           return (
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
@@ -41,9 +34,9 @@ const ProjectsSection = () => {
                     </Link>
                   </div>
                   <div className="mt-8 md:w-1/2">
-                    <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
+                    <h1 className="text-4xl font-bold mb-6">{project.NAME}</h1>
                     <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400">
-                      {project.description}
+                      {props.language === "german" ? project.DESCRIPTION_GER : project.DESCRIPTION_ENG}
                     </p>
                     <div className="flex flex-row align-bottom space-x-4">
                       <Link href={project.github} target="_blank">

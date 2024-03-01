@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import AboutText from "@/data/AboutText";
 
 const skills = [
   { skill: "HTML" },
@@ -20,62 +21,54 @@ const skills = [
   { skill: "Postman" },
 ]
 
-const AboutSection = () => {
+const AboutSection = ( props: any) => {
+  let text = props.language === "german"? AboutText.GERMAN : AboutText.ENGLISH;
+
   return (
     <section id="about">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
+
         <h1 className="text-center font-bold text-4xl">
-          About Me
+          {text.HEADER}
           <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
         </h1>
 
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
           <div className="md:w-1/2 ">
             <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
-              Get to know me!
+              {text.HEADLINE}
             </h1>
             <p>
-              Hi, my name is Albert and I am a
-              <b>{" highly ambitious"}</b>,
-              <b>{" self-motivated "}</b> and
-              <b>{" driven "}</b> software engineer
-              living in Vienna, Austria.
+              {text.GREETING_INTRO}
+              <b>{text.GREETING_BOLD1}</b>,
+              <b>{text.GREETING_BOLD2}</b>{text.AND}
+              <b>{text.GREETING_BOLD3}</b>
+              {text.GREETING_END}
             </p>
             <br />
-            <p>
-              I graduated from Codecool in 2023 by
-              finishing the Fullstack-Developer course, and am currently looking for a
-              full-time position to use and further improve my programming skills.
-            </p>
+            <p>{text.BACKGROUND}</p>
+            <br />
+            <p>{text.HOBBIES}</p>
             <br />
             <p>
-              I have a wide range of hobbies and passions that keep me busy.
-              Be it reading, playing various games, attending events or just going out with friends,
-              I am always seeking new experiences and love to keep myself
-              engaged and learning new things.
-            </p>
-            <br />
-            <p>
-              I believe a person should{" "}
+              {text.MOTIVATION_INTRO}{" "}
               <span className="font-bold text-teal-500">
-                never stop growing
+                {text.MOTIVATION_COLOR}
               </span>{" "}
-              and that&#39;s what I strive to do, I have a passion for
-              technology and a desire to always push the limits of what is
-              possible. I am excited to see where my new career takes me and am
-              always open to new opportunities. 🙂
+              {text.MOTIVATION_END}
             </p>
           </div>
+
           <div className="text-center md:w-1/2 md:text-left">
-            <h1 className="text-2xl font-bold mb-6">My Skills</h1>
+            <h1 className="text-2xl font-bold mb-6">{text.SKILL_HEADER}</h1>
             <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
-              {skills.map((item, idx) => {
+              {AboutText.SKILLS.map((item, idx) => {
                 return (
                   <p
                     key={idx}
                     className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
                   >
-                    {item.skill}
+                    {item}
                   </p>
                 )
               })}
